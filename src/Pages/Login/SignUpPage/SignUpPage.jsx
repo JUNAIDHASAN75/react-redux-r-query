@@ -1,9 +1,39 @@
+import { useForm } from "react-hook-form";
 
 
 const SignUpPage = () => {
+    const { register, handleSubmit, reset,  formState: { errors } } = useForm()
+    const onSubmit = data => {
+        console.log(data)
+        reset()
+    }
     return (
-        <div>
-            <h2>this is sign up page</h2>
+        <div className="w-50 mx-auto">
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="my-3">
+                    <label htmlFor="email">
+                        <span className="h5">Name</span>
+                    </label>
+                    <input className="w-100 p-3 my-3 rounded-2 border-2 border-dark-subtle" type="text" placeholder="name" {...register('name', { required: true })} />
+                    {errors.name && <p>Name is required</p>}
+                </div>
+                <div className="my-3">
+                    <label htmlFor="email">
+                        <span className="h5">Email</span>
+                    </label>
+                    <input className="w-100 p-3 my-3 rounded-2 border-2 border-dark-subtle" type="email" placeholder="junaidullash@gmail.com" {...register('email', { required: true })} />
+                    {errors.email && <p>email is required</p>}
+                </div>
+                <div className="my-3">
+                    <label htmlFor="email">
+                        <span className="h5">Password</span>
+                    </label>
+                    <input className="w-100 p-3 my-3 rounded-2 border-2 border-dark-subtle" type="password" placeholder="Password" {...register('password', { required: true })} />
+                </div>
+                <div className="my-3">
+                    <input className="btn btn-primary w-100" type="submit" value="Login" />
+                </div>
+            </form>
         </div>
     );
 };
