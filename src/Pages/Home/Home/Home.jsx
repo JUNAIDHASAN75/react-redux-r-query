@@ -1,8 +1,9 @@
+import Coffees from "../Coffees/Coffees";
 
 const Home = () => {
     return (
         <div>
-            <h2>this is home</h2>
+            <Coffees></Coffees>
         </div>
     );
 };

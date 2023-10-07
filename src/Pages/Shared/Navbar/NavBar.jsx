@@ -12,8 +12,8 @@ const NavBar = () => {
           <Nav className="me-auto d-flex gap-4 align-items-md-center ">
             <Link className="text-decoration-none h5" to='/'>Home</Link>
             <Link className="text-decoration-none h5" to='private'>Protected Route</Link>
-            <Link className="text-decoration-none h5" to='/'>About</Link>
-            <Link className="text-decoration-none h5" to='/'>Contact Us</Link>
+            <Link className="text-decoration-none h5" to='/about'>About</Link>
+            <Link className="text-decoration-none h5" to='/contact'>Contact Us</Link>
             <div>
                 <Link to='/login' className="btn btn-primary">Login</Link>
             </div>
