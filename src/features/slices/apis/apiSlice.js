@@ -15,7 +15,14 @@ export const apiSlice = createApi({
     endpoints: (builder)=>({
         getApi: builder.query({
             query:()=>'/coffees'
+        }),
+        postApi:builder.mutation({
+            query:(coffees)=>({
+                url:'/coffees',
+                method:'POST',
+                body:coffees,
+            })
         })
     })
 })
-export const { useGetApiQuery } =apiSlice
+export const { useGetApiQuery,usePostApiMutation } =apiSlice
